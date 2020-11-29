@@ -34,9 +34,18 @@ $routes->get('/', 'Home::index');
 
 $routes->group('api', ['namespace' => 'App\Controllers\API'], function($routes){
 
-	$routes->get('estudiantes', 'Estudiantes::index');
-	$routes->post('estudiantes/create', 'Estudiantes::create');
-	$routes->get('estudiantes/edit/(:num)', 'Estudiantes::edit/$1');
+	$routes->get('estudiante', 'Estudiantes::index');
+	$routes->post('estudiante/create', 'Estudiantes::create');
+	$routes->get('estudiante/edit/(:num)', 'Estudiantes::edit/$1');
+
+	$routes->get('profesor', 'Profesores::index');
+	$routes->post('profesor/create', 'Profesores::create');
+	$routes->get('profesor/edit/(:num)', 'Profesores::edit/$1');
+	$routes->put('profesor/update/(:num)', 'Profesores::update/$1');
+	$routes->delete('profesor/delete/(:num)', 'Profesores::delete/$1');
+
+
+
 });
 /**
  * --------------------------------------------------------------------

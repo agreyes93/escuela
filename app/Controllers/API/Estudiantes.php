@@ -1,12 +1,12 @@
 <?php namespace App\Controllers\API;
 
-use App\Models\EstudianteModel;
+use App\Models\estudianteModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class Estudiantes extends ResourceController
 {
     public function __construct() {
-        $this->model = $this->setModel(new EstudianteModel());
+        $this->model = $this->setModel(new estudianteModel());
     }
 
 	public function index()
@@ -22,7 +22,7 @@ class Estudiantes extends ResourceController
             $estudiante = $this->request->getJSON();
             if($this->model->insert($estudiante)):
                 $estudiante->id = $this->model->insertID();
-                return $this->respondCreated($cliente);
+                return $this->respondCreated($estudiante);
             else:
                 return $this->failValidationError($this->model->validation->listErrors());
             endif;
@@ -32,7 +32,7 @@ class Estudiantes extends ResourceController
         }
     }
 
-    public function edit($id = null){
+    /*public function edit($id = null){
         try {
             return $this->failValidationError('No se ha pasado un Id valido');
             $estudiante = $this->model->find($id);
@@ -43,5 +43,5 @@ class Estudiantes extends ResourceController
         } catch (\Exception $e) {
             return $this->failServerError('Ha ocurrido un error en el servidor');
         }
-    }
+    } */
 }

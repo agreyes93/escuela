@@ -2,12 +2,12 @@
 
 use CodeIgniter\Model;
 
-class estudianteModel extends Model {
+class profesorModel extends Model {
 
-    protected $table            = 'estudiante';
+    protected $table            = 'profesor';
     protected $primaryKey       = 'id';
     protected $returnType       = 'array';
-    protected $allowedFileds    = ['nombre', 'apellido', 'dui', 'genero', 'carnet'];
+    protected $allowedFileds    = ['nombre', 'apellido', 'profesion', 'telefono', 'dui'];
     protected $useTimestamps    = true;
     protected $createdField     = 'created_at';
     protected $updatedField     = 'updated_at';
@@ -15,9 +15,9 @@ class estudianteModel extends Model {
     protected $validationRules  = [
         'nombre' => 'required|alpha_space|min_lenght[3]|max_lenght[75]',
         'apellido' => 'required|alpha_space|min_lenght[3]|max_lenght[75]',
-        'dui' => 'required|alpha_numeric_space|min_lenght[8]|max_lenght[10]',
-        'genero' => 'required|alpha_space|max_lenght[1]',
-        'carnet' => 'required|alpha_space|max_length[9]'
+        'profesion' => 'required|alpha_space|min_lenght[3]|max_lenght[3]',
+        'telefono' => 'required|alpha_space|min_lenght[8]|max_length[9]',
+        'dui' => 'required|alpha_space|min_lenght[9]|max_lenght[10]'
      ];
 
         protected $skipValidation   = false;
