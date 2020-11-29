@@ -37,6 +37,8 @@ $routes->group('api', ['namespace' => 'App\Controllers\API'], function($routes){
 	$routes->get('estudiante', 'Estudiantes::index');
 	$routes->post('estudiante/create', 'Estudiantes::create');
 	$routes->get('estudiante/edit/(:num)', 'Estudiantes::edit/$1');
+	$routes->put('estudiante/update/(:num)', 'Estudiantes::update/$1');
+	$routes->delete('estudiante/delete/(:num)', 'Estudiantes::delete/$1');
 
 	$routes->get('profesor', 'Profesores::index');
 	$routes->post('profesor/create', 'Profesores::create');
@@ -44,7 +46,11 @@ $routes->group('api', ['namespace' => 'App\Controllers\API'], function($routes){
 	$routes->put('profesor/update/(:num)', 'Profesores::update/$1');
 	$routes->delete('profesor/delete/(:num)', 'Profesores::delete/$1');
 
-
+	$routes->get('grado', 'Grados::index');
+	$routes->post('grado/create', 'Grados::create');
+	$routes->get('grado/edit/(:num)', 'Grados::edit/$1');
+	$routes->put('grado/update/(:num)', 'Grados::update/$1');
+	$routes->delete('grado/delete/(:num)', 'Grados::delete/$1');
 
 });
 /**

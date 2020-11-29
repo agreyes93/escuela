@@ -1,18 +1,18 @@
 <?php namespace App\Controllers\API;
 
-use App\Models\profesorModel;
+use App\Models\ProfesorModel;
 use CodeIgniter\RESTful\ResourceController;
 
 class Profesores extends ResourceController
 {
     public function __construct() {
-        $this->model = $this->setModel(new profesorModel());
+        $this->model = $this->setModel(new ProfesorModel());
     }
 
 	public function index()
 	{
-        $profesores = $this->model->findAll();
-        return $this->respond($profesores);
+        $profesor = $this->model->findAll();
+        return $this->respond($profesor);
 	}
 
     public function create() 
